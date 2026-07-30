@@ -1,7 +1,6 @@
 package com.finance.financedashboard.controller;
 
-import com.finance.financedashboard.dto.AuthRequestDTO;
-import com.finance.financedashboard.dto.AuthResponseDTO;
+import com.finance.financedashboard.dto.*;
 import com.finance.financedashboard.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +18,10 @@ public class AuthController {
     @PostMapping("/login")
     public AuthResponseDTO login(@RequestBody AuthRequestDTO request) {
         return authService.login(request);
+    }
+    @PostMapping("/register")
+    public UserResponseDto register(@RequestBody RegisterRequestDto request) {
+        return authService.register(request);
     }
 }
 

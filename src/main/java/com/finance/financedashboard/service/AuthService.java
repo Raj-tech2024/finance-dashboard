@@ -1,8 +1,9 @@
 package com.finance.financedashboard.service;
 
-import com.finance.financedashboard.dto.AuthRequestDTO;
-import com.finance.financedashboard.dto.AuthResponseDTO;
+import com.finance.financedashboard.dto.*;
 
 public interface AuthService {
+
     AuthResponseDTO login(AuthRequestDTO request);
-}
+
+    UserResponseDto register(RegisterRequestDto request);}

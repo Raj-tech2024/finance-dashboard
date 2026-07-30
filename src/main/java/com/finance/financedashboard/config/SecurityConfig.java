@@ -4,7 +4,6 @@ import com.finance.financedashboard.security.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -40,7 +39,7 @@ public class SecurityConfig {
                         ).permitAll()
 
                         // 👤 ADMIN only
-                        .requestMatchers("/users/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").hasRole("ADMIN")
 
                         // 📊 Dashboard
                         .requestMatchers("/dashboard/**").hasAnyRole("ADMIN", "ANALYST")
